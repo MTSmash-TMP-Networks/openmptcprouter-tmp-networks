@@ -1,0 +1,11 @@
+--- a/src/flowlabel.h
++++ b/src/flowlabel.h
+@@ -37,7 +37,7 @@
+    conflicts with "netinet/in.h" .
+ */
+ 
+-#ifndef __ANDROID__
++#if !defined(__ANDROID__) && !defined(_LINUX_IN6_H)
+ struct in6_flowlabel_req
+ {
+     struct in6_addr flr_dst;
